@@ -1,6 +1,5 @@
 # k-means-sleep-analysis
 Aplicación web con Flask que utiliza K-Means para agrupar especies según sus hábitos de sueño y niveles de peligro.
-# K-Means Sleep Analysis
 
 Este proyecto aplica un modelo de **Aprendizaje No Supervisado (K-Means)** para agrupar especies de mamíferos según sus hábitos de sueño, características físicas y factores de riesgo. La aplicación está desarrollada en **Python** utilizando el framework **Flask**.
 
