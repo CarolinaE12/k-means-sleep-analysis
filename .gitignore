@@ -1,0 +1,13 @@
+# Dataset original
+sleep_data_raw.csv
+
+# Proyecto de Orange
+*.ows
+
+# Carpetas de Python
+__pycache__/
+venv/
+.env
+
+# Archivos de sistema
+.DS_Store

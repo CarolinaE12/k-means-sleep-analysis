@@ -1,0 +1,24 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border-radius: 12px;
+    border: none;
+}
+
+.navbar {
+    border-bottom: 3px solid #0d6efd;
+}
+
+/* Hacer que la tabla de Flask/Pandas se vea como de Bootstrap */
+.table {
+    font-size: 0.9rem;
+}
+
+.table thead {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    z-index: 1;
+}

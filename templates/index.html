@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Analysis Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">Mamíferos: Análisis de Sueño con K-Means</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card shadow-sm p-4 mb-4">
+                    <h2>Contexto del Proyecto</h2>
+                    <p>Este sistema analiza patrones de sueño en diversas especies de mamíferos basándose en 124 registros preprocesados. 
+                       El objetivo es identificar grupos ocultos que relacionen el <strong>tiempo total de sueño</strong> con el <strong>índice de peligro</strong>.</p>
+                    <hr>
+                    <h5>Variables Clave:</h5>
+                    <ul>
+                        <li><strong>Total Sleep:</strong> Horas totales de sueño al día.</li>
+                        <li><strong>Danger Index:</strong> Índice de probabilidad de ser atacado (1 a 5).</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card shadow-sm p-4 border-primary">
+                    <h4>Configurar Modelo</h4>
+                    <form action="/ejecutar" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Número de Clústeres (K)</label>
+                            <input type="number" name="clusters" class="form-control" value="3" min="2" max="10">
+                            <small class="text-muted">Se recomienda K=3 para este dataset.</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Generar Clústeres</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

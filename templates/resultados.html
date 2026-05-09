@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados del Análisis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Resultados del Modelo</h1>
+            <a href="/" class="btn btn-outline-secondary">Volver al inicio</a>
+        </div>
+
+        <div class="row">
+            <!-- Gráfica -->
+            <div class="col-lg-7">
+                <div class="card shadow-sm p-3 mb-4 text-center">
+                    <h4>Visualización de Clústeres</h4>
+                    <img src="{{ url_for('static', filename='cluster_plot.png') }}" class="img-fluid rounded" alt="Gráfica de K-Means">
+                </div>
+            </div>
+
+            <!-- Resumen Técnico -->
+            <div class="col-lg-5">
+                <div class="card shadow-sm p-3 mb-4 bg-white">
+                    <h4>Interpretación Técnica</h4>
+                    <p>Los puntos representan especies. Los iconos <strong>X rojos</strong> son los centroides de cada grupo.</p>
+                    <div class="alert alert-warning py-2">
+                        <strong>Normalización:</strong> Se aplicó <em>StandardScaler</em> para equilibrar las escalas de las variables.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de Datos -->
+        <div class="card shadow-sm p-3 mb-5">
+            <h4>Dataset con Clúster Asignado (Muestra)</h4>
+            <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                {{ data | safe }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
